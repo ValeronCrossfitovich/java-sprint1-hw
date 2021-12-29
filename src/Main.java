@@ -7,9 +7,7 @@ class Main {
         Scanner scanner = new Scanner(System.in);
         StepTracker stepTracker = new StepTracker();
 
-        int purposeDay;
-        purposeDay = 10000;
-        System.out.println("Ваша цель " + purposeDay + " шагов в день.");
+        stepTracker.purpose(10000);
 
         while (true) {
             printMenu();
@@ -17,7 +15,7 @@ class Main {
             if (command == 1) {
                 System.out.println("Введите новую цель по шагам: ");
                 int newPurposeDay = scanner.nextInt();
-                stepTracker.newPurposeDay(newPurposeDay);
+                stepTracker.purpose(newPurposeDay);
             } else if (command == 2) {
                 System.out.println("Выберите месяц: Январь, Февраль, Март, Апрель, Май, Июнь, " +
                                    "Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь");

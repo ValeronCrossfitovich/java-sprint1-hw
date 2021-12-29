@@ -3,7 +3,8 @@ import java.util.HashMap;
 
 class StepTracker {
 
-	HashMap<String, int[]> months = new HashMap<>();
+    HashMap<String, int[]> months = new HashMap<>();
+
 
     void statistics(String month, int day, int steps) {
         if (months.containsKey(month)) {
@@ -16,10 +17,6 @@ class StepTracker {
             months.put(month, days);
             System.out.println("Значение сохранено. Нет");
         }
-    }
-
-    void newPurposeDay(int newSteps) {
-        System.out.println("Ваша новая цель: " + newSteps + " шагов в день.");
     }
 
     void sumMonthStepsAndDay(String month) {
@@ -35,7 +32,7 @@ class StepTracker {
             for (int sum : days) {
                 sumStepsMonth += sum;
                 if (sum > 10000) {
-                    System.out.println("В эти дни: " +  sum);
+                    System.out.println("В эти дни: " + sum);
                 }
                 System.out.println();
             }
@@ -46,4 +43,11 @@ class StepTracker {
         }
 
     }
+
+    void purpose(int p) {
+        int purposeDay;
+        purposeDay = p;
+        System.out.println("Ваша цель в день: " + purposeDay + " шагов.");
+    }
+
 }
