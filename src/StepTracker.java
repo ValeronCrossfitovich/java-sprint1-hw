@@ -10,12 +10,12 @@ class StepTracker {
         if (months.containsKey(month)) {
             int[] days = months.get(month);
             days[day - 1] = days[day - 1] + steps;
-            System.out.println("Значение сохранено. Есть");
+            System.out.println("Значение сохранено.");
         } else {
             int[] days = new int[30];
             days[day - 1] = days[day - 1] + steps;
             months.put(month, days);
-            System.out.println("Значение сохранено. Нет");
+            System.out.println("Значение сохранено.");
         }
     }
 
@@ -32,6 +32,7 @@ class StepTracker {
             for (int sum : days) {
                 sumStepsMonth += sum;
                 if (sum > 10000) {
+                    // TODO consecutive days > goal
                     System.out.println("В эти дни: " + sum);
                 }
                 System.out.println();
@@ -44,9 +45,9 @@ class StepTracker {
 
     }
 
-    void purpose(int p) {
+    void purpose(int step) {
         int purposeDay;
-        purposeDay = p;
+        purposeDay = step;
         System.out.println("Ваша цель в день: " + purposeDay + " шагов.");
     }
 
